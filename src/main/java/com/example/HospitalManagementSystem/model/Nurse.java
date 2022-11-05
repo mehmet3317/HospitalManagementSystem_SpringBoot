@@ -1,10 +1,12 @@
 package com.example.HospitalManagementSystem.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-public class Patient {
-
+public class Nurse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -12,11 +14,8 @@ public class Patient {
     private String lastname;
     private String email;
     private String password;
-
-    private String RetypePassword;
-    private String gender;
     private Long phone;
-    private String address;
+
 
     public Long getId() {
         return id;
@@ -58,22 +57,6 @@ public class Patient {
         this.password = password;
     }
 
-    public String getRetypePassword() {
-        return RetypePassword;
-    }
-
-    public void setRetypePassword(String retypePassword) {
-        RetypePassword = retypePassword;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
     public Long getPhone() {
         return phone;
     }
@@ -82,25 +65,4 @@ public class Patient {
         this.phone = phone;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    @Override
-    public String toString() {
-        return "Patient{" +
-                "id=" + id +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", gender='" + gender + '\'' +
-                ", phone=" + phone +
-                ", address='" + address + '\'' +
-                '}';
-    }
 }

@@ -14,6 +14,7 @@ import java.util.List;
 //@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/patients")
+@CrossOrigin(origins = "http://localhost:3000")
 public class PatientController {
 
     @Autowired
@@ -26,17 +27,17 @@ public class PatientController {
 //    public String home() {
 //        return "home";
 //    }
-    @CrossOrigin
+
     @GetMapping()
     public List<Patient> getAll(Model model) {
         List<Patient> patients = patientService.getAllPatients();
         return patientRepository.findAll();
     }
 
-    @GetMapping("/patientregistration")
-    public String patient1(Model model) {
-        model.addAttribute("patient", new Patient());
-        return "patientregistration";
+    @PostMapping("/register")
+    public Patient createPatient(@RequestBody Patient patient) {
+        Patient savedPatient = patientService.save(patient);
+        return savedPatient;
     }
 
 //    @PostMapping("/patientlogin")

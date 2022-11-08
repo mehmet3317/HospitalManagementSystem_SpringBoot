@@ -1,7 +1,7 @@
 package com.example.HospitalManagementSystem.security.services;
 
-import com.bezkoder.springjwt.models.User;
-import com.bezkoder.springjwt.repository.UserRepository;
+import com.example.HospitalManagementSystem.model.User;
+import com.example.HospitalManagementSystem.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
